@@ -46,4 +46,10 @@ class BSON::ObjectId::UUIDConvertableTest < Minitest::Test
 
     assert_equal(object_id_from_uuid, BSON::ObjectId('5a74c31b0d6cabe30aa88fad'))
   end
+
+  def test_converted_uuid_has_correct_size
+    object_id = BSON::ObjectId.from_string('5aa1b24ee72f4547255b2f7f')
+
+    assert_equal(object_id.to_uuid, '01241b7f-231c-11e8-802f-5be72f454725')
+  end
 end

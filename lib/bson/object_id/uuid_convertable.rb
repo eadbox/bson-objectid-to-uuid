@@ -23,7 +23,7 @@ module BSON::ObjectId::UUIDConvertable
       (high_counter << 40) + machine_pid
     ]
 
-    format('%06x-%04x-%04x-%04x-%012x', *bytes)
+    format('%08x-%04x-%04x-%04x-%012x', *bytes)
   end
 
   module ClassMethods
