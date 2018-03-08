@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bson-objectid-to-uuid (0.1.0)
+    bson-objectid-to-uuid (0.1.1)
       bson (~> 4.0)
 
 GEM
