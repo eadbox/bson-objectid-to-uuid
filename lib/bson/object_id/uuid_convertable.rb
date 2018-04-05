@@ -43,7 +43,7 @@ module BSON::ObjectId::UUIDConvertable
 
       high_counter = parts[4][0..1]
       mid_counter = parts[3][2..3]
-      low_counter = timestamp % 10_000_000
+      low_counter = (timestamp % 10_000_000) & 0xFF
 
       seconds = (timestamp - GREGORIAN_EPOCH_OFFSET) / 10_000_000
 
