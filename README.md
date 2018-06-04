@@ -1,6 +1,6 @@
 # BSON::ObjectID::UUIDConvertable
 
-This gem allows for you to use `BSON::ObjectId`'s and `UUIDv1`'s interchangeably with the mongo-ruby driver and/or mongoid.
+This gem allows for you to use `BSON::ObjectId`'s and `UUIDv4`'s interchangeably with the mongo-ruby driver and/or mongoid.
 
 ## Installation
 
@@ -20,17 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-Convert a `BSON::ObjectId` to `UUIDv1`:
+Convert a `BSON::ObjectId` to `UUIDv4`:
 
 ```ruby
-oid = BSON::ObjectId.new # => BSON::ObjectId('5a785ae00d6cab0695bb7694')
-oid.to_uuid # => "c9edf094-0a77-11e8-8076-bb0d6cab0695"
+oid = BSON::ObjectId.new # => BSON::ObjectId('5a74c31b0d6cabe30aa88fad')
+oid.to_uuid # => "0bdaea5a-74c3-41b0-ad6c-abe30aa88fad"
 ```
 
-Convert `UUIDv1` to `BSON::ObjectId`:
+Convert `UUIDv4` to `BSON::ObjectId`:
 
 ```ruby
-BSON::ObjectId.from_uuid("c9edf094-0a77-11e8-8076-bb0d6cab0695") # => BSON::ObjectId('5a785ae00d6cab0695bb7694')
+BSON::ObjectId.from_uuid("0bdaea5a-74c3-41b0-ad6c-abe30aa88fad") # => BSON::ObjectId('5a74c31b0d6cabe30aa88fad')
 ```
 
 ## Usage with Mongoid
@@ -39,13 +39,13 @@ Getting the `UUIDv1` for a `Mongoid::Document`:
 
 ```ruby
 user = User.first # => #<User ... >
-user._id.to_uuid # => "c9edf094-0a77-11e8-8076-bb0d6cab0695"
+user._id.to_uuid # => "0bdaea5a-74c3-41b0-ad6c-abe30aa88fad"
 ```
 
 Finding a `Mongoid::Document` using `UUIDv1`:
 
 ```ruby
-user = User.find("c9edf094-0a77-11e8-8076-bb0d6cab0695") # => # => #<User ... >
+user = User.find("0bdaea5a-74c3-41b0-ad6c-abe30aa88fad") # => # => #<User ... >
 ```
 
 ## Development
